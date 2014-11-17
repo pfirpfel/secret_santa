@@ -1,29 +1,41 @@
 people:
   -
     name: Edward
-    group: New York Smiths
+    exclude:
+      - Kara
+      - Alberto
     email: edward@example.com
   -
     name: Kara
-    group: New York Smiths
+    exclude:
+      - Edward
+      - Alberto
     email: kara@example.com
   -
     name: Alberto
-    group: Atlanta Smiths
+    exclude:
+      - Kara
+      - Edward
     email: alberto@example.com
   -
     name: Natasha
-    group: Atlanta Smiths
+    exclude: []
     email: jeanette@exaple.com
   -
     name: Tyler
-    group: Seattle Joneses
+    exclude:
+      - Linda
+      - Fiona
     email: tyler@example.com
   -
     name: Linda
-    group: Seattle Jonses
+    exclude:
+      - Tyler
+      - Fiona
     email: linda@example.com
   -
     name: Fiona
-    group: Seattle Jonses
+    exclude:
+      - Linda
+      - Tyler
     email: fiona@example.com
