@@ -68,8 +68,6 @@ people.each do |person|
   message = <<-MESSAGE
  GREETINGS #{person.santa.name.upcase},
 
- HATS ARE NOW OBSELETE.
-
  SANTABOT 5000 HAS BEEN ACTIVATED. YOU HAVE BEEN CHOSEN AS A SECRET SANTA.
  YOUR TARGET IS AS FOLLOWS:
 
