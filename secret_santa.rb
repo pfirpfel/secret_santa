@@ -68,7 +68,7 @@ people.each do |person|
   message = <<-MESSAGE
  GREETINGS #{person.santa.name.upcase},
 
- SANTABOT 5000 HAS BEEN ACTIVATED. YOU HAVE BEEN CHOSEN AS A SECRET SANTA.
+ SANTABOT K-9 HAS BEEN ACTIVATED. YOU HAVE BEEN CHOSEN AS A SECRET SANTA.
  YOUR TARGET IS AS FOLLOWS:
 
  #{person.name.upcase}
@@ -80,8 +80,8 @@ people.each do |person|
 
  THAT IS ALL.
 
- --SANTABOT 5000
+ --SANTABOT K-9
  MESSAGE
-  email = Email.new(person.santa.email, "SANTABOT 5000: #{Time.now.year} TARGETS", message)
+  email = Email.new(person.santa.email, "SANTABOT K-9: #{Time.now.year} TARGETS", message)
   emailer.send(email)
 end
