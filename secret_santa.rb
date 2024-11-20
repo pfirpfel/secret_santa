@@ -61,6 +61,7 @@ emailer     = Emailer.new(
   smtp_config['smtp_server'],
   smtp_config['domain'],
   smtp_config['account_address'],
+  smtp_config['account_user'],
   smtp_config['account_password']
 )
 

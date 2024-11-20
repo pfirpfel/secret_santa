@@ -2,12 +2,13 @@ require 'net/smtp'
 
 class Emailer
 
-  attr_accessor :smtp_server, :domain, :account_address, :account_password, :port
+  attr_accessor :smtp_server, :domain, :account_address, :account_user, :account_password, :port
 
-  def initialize(smtp_server, domain, account_address, account_password, port = 587)
+  def initialize(smtp_server, domain, account_address, account_user, account_password, port = 587)
     self.smtp_server      = smtp_server
     self.domain           = domain
     self.account_address  = account_address
+    self.account_user     = account_user
     self.account_password = account_password
     self.port             = port
   end
@@ -20,8 +21,8 @@ class Emailer
 
       smtp = Net::SMTP.new(smtp_server, port)
       smtp.enable_starttls
-      smtp.start(domain, account_address, account_password, :login) do |smtp|
-        smtp.send_message(email.message, email.from_address, email.to_address)
+      smtp.start(user: account_user, secret: account_password) do |s|
+        s.send_message(email.message, email.from_address, email.to_address)
       end
       
       print "sent!\n"
